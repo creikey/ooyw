@@ -1,7 +1,12 @@
 libname='ooyw'
 cppfiles=Glob('*.cpp')
+installdir='/usr/local/lib'
+installincludedir='/usr/local/include/' + libname
+includedir='include'
+libincludedir=includedir+'/ooyw'
 
 env=Environment()
-env.Append(CPPPATH='include')
+env.Append(CPPPATH=includedir)
 env.StaticLibrary(libname, cppfiles)
-env.Alias('install', env.Install('/usr/local/lib', source = 'lib' + libname + '.a'))
+# env.Alias('install', [env.Install(installdir, source = 'lib' + libname + '.a'), env.Install(installincludedir, source = libincludedir)])
+env.Alias('install', [env.Install(installincludedir, source = Glob(libincludedir + '/*'))])
