@@ -8,5 +8,4 @@ libincludedir=includedir+'/ooyw'
 env=Environment()
 env.Append(CPPPATH=includedir)
 env.StaticLibrary(libname, cppfiles)
-# env.Alias('install', [env.Install(installdir, source = 'lib' + libname + '.a'), env.Install(installincludedir, source = libincludedir)])
-env.Alias('install', [env.Install(installincludedir, source = Glob(libincludedir + '/*'))])
+env.Alias('install', [env.Install(installdir, source = 'lib' + libname + '.a'), env.Install(installincludedir, source = Glob(libincludedir + '/*'))])
