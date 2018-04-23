@@ -1,0 +1,7 @@
+libname='ooyw'
+cppfiles=Glob('*.cpp')
+
+env=Environment()
+env.Append(CPPPATH='include')
+env.StaticLibrary(libname, cppfiles)
+env.Alias('install', env.Install('/usr/local/lib', source = 'lib' + libname + '.a'))
