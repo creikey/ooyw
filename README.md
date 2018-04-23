@@ -6,3 +6,7 @@
 </p>
 <br>
 Before contributing, source the `environment.sh` bash file in the project root to get some useful commands
+
+To install, run `scons install`
+
+To uninstall, run `scons -c install`, and the directory `/usr/local/ooyw` will still exist but with no files
