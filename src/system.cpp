@@ -2,13 +2,15 @@
 #include "ooyw/error.hpp"
 #include "ooyw/system.hpp"
 
+#include <memory>
+
 namespace ooyw {
 System::System(Settings &inSettings) : conf(inSettings) {
   if (!al_init()) {
-    throw InitError("al_init");
+    throw INITERROR("al_init");
   }
   try {
-    disp = Display(inSettings.displaySize, inSettings.clearColor);
+    this->disp = std::shared_ptr<Display>(new Display(inSettings.displaySize, inSettings.clearColor));
   } catch (InitError &err) {
     throw err;
   }

@@ -1,6 +1,7 @@
 #ifndef HPP_SYSTEM
 #define HPP_SYSTEM
 
+#include <memory>
 #include "ooyw/display.hpp"
 #include "ooyw/settings.hpp"
 
@@ -12,7 +13,7 @@ public:
 
 private:
   Settings &conf;
-  Display disp;
+  std::shared_ptr<Display> disp;
 };
 }
 
