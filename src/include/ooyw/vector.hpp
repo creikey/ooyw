@@ -4,6 +4,7 @@
 #include <cmath>
 #include <string>
 
+namespace ooyw {
 // Standard 2d Vector2
 template <class T = float> class Vector2 {
 public:
@@ -52,5 +53,6 @@ public:
     return (this->x < vec.x) && (this->y < vec.y);
   }
 };
+}
 
 #endif // HPP_VECTOR

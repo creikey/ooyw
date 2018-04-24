@@ -3,6 +3,7 @@
 
 #include "ooyw/settings.hpp"
 
+namespace ooyw {
 class System {
 public:
   System(Settings &);
@@ -10,5 +11,6 @@ public:
 private:
   Settings &conf;
 };
+}
 
 #endif // HPP_SYSTEM
