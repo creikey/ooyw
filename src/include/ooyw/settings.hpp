@@ -9,6 +9,7 @@ class Settings {
 public:
   double fps;
   Vector2<int> displaySize;
+  SafeColor clearColor;
 };
 }
 
