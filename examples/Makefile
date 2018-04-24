@@ -1,7 +1,7 @@
-.PHONY: vector clean
+.PHONY: vector clean display
 
-display: display/main.cpp
-	g++ display/main.cpp -looyw `pkg-config --libs allegro-5`
+display:
+	g++ display/main.cpp -looyw `pkg-config --libs allegro-5` -g
 	./a.out
 
 vector: vector/main.cpp
