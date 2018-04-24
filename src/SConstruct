@@ -5,3 +5,4 @@ lib = env.StaticLibrary('libooyw.a', cppfiles)
 installActions=[env.Install('/usr/local/lib', lib), env.Install('/usr/local/include/ooyw', hppfiles)]
 Clean(installActions, '/usr/local/include/ooyw')
 env.Alias('install', installActions)
+env.Alias('debug', env.Append(CXXFLAGS='-g'))
