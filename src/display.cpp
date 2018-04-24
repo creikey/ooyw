@@ -20,11 +20,11 @@ Display::Display(Vector2<int> inSize, SafeColor inColor)
 Display::~Display() { al_destroy_display(this->disp); }
 void Display::init() {
   if (!al_is_system_installed()) {
-    throw InitError("al_is_system_installed");
+    throw INITERROR("al_is_system_installed");
   }
   this->disp = al_create_display(this->size.x, this->size.y);
   if (!this->disp) {
-    throw InitError("al_create_display", this->size.toString());
+    throw INITERROR("al_create_display", this->size.toString());
   }
   al_clear_to_color(this->clearColor.al_c());
   al_flip_display();
