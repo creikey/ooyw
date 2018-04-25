@@ -10,10 +10,11 @@ System::System(Settings &inSettings) : conf(inSettings) {
     throw INITERROR("al_init");
   }
   try {
-    this->disp = std::shared_ptr<Display>(new Display(inSettings.displaySize, inSettings.clearColor));
+    this->disp = std::shared_ptr<Display>(
+        new Display(inSettings.displaySize, inSettings.clearColor));
   } catch (InitError &err) {
     throw err;
   }
 };
-System::~System() { al_uninstall_system(); }
+System::~System() {}
 }
