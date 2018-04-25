@@ -8,13 +8,14 @@ int main(int argc, char **argv) {
   set.fps = 60;
   set.displaySize = ooyw::Vector2<int>(500, 500);
   set.clearColor = ooyw::SafeColor(0, 0, 0);
-  ooyw::System * sys;
+  ooyw::System *sys;
   try {
     sys = new ooyw::System(set);
   } catch (ooyw::InitError &err) {
     std::cerr << err.what() << std::endl;
     return -1;
   }
-  al_rest(5);
+  al_rest(1);
+  delete sys;
   return 0;
 }
