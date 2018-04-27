@@ -12,4 +12,10 @@ InitError::InitError(std::string file, int line, std::string methodName,
                   std::to_string(line) + " file " + file;
 }
 const char *InitError::what() { return this->whatStr.c_str(); }
+IDError::IDError(std::string file, int line, std::string inID,
+                 std::string inSearchArea) {
+  this->whatStr = "Failed to find object with ID: `" + inID +
+                  "` in search area `" + inSearchArea + "`";
+}
+const char *IDError::what() { return this->whatStr.c_str(); }
 }
