@@ -18,4 +18,8 @@ IDError::IDError(std::string file, int line, std::string inID,
                   "` in search area `" + inSearchArea + "`";
 }
 const char *IDError::what() { return this->whatStr.c_str(); }
+EventBroadcastError::EventBroadcastError(std::string file, int line, std::string inEvent) {
+  this->whatStr = "No listeners registered for event `" + inEvent + "` in file" + file + ", line " + line;
+}
+const char * EventBroadcastError::what() { return this->whatStr.c_str(); }
 }

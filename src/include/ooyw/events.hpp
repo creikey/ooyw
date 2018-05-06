@@ -19,6 +19,8 @@ private:
 public:
   void registerEvent(std::string inName,
                      std::shared_ptr<EventListener> toRegister);
+  // Throws event broadcast error
+  void broadcastEvent(std::string toBroadcast);
 };
 class Event {
 public:
@@ -27,7 +29,6 @@ public:
 class EventListener {
 public:
   virtual void onEvent(std::shared_ptr<Event>) = 0;
-  virtual void registerEvents(EventServer *) = 0;
 };
 }
 
