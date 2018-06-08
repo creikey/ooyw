@@ -27,7 +27,6 @@ public:
 class EventListener {
 public:
   virtual void onEvent(std::shared_ptr<Event>) = 0;
-  virtual void registerEvents(EventServer *) = 0;
 };
 }
 
