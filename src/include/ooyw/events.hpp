@@ -19,6 +19,8 @@ private:
 public:
   void registerEvent(std::string inName,
                      std::shared_ptr<EventListener> toRegister);
+  // Throws event broadcast error
+  void broadcastEvent(std::string toBroadcast);
 };
 class Event {
 public:
